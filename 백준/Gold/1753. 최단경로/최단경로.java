@@ -58,6 +58,14 @@ public class Main {
 		v = sc.nextInt(); // 정점 개수
 		int e = sc.nextInt(); // 간선 개수
 
+		dist = new int[v + 1];
+
+		check = new boolean[v + 1];
+		// dist 배열은 무한대 값으로 초기화
+		// 원래 값보다 작으면 원소를 갱신하는 쪽으로 구현할 것이므로
+		INF = Integer.MAX_VALUE;
+		Arrays.fill(dist, INF);
+
 		adjList = new ArrayList[v + 1]; // 방 몇 개인지만 정해주고
 
 		for (int i = 0; i <= v; i++) {
@@ -81,13 +89,6 @@ public class Main {
 	}
 
 	public static void dijkstra(int node) {
-		dist = new int[v + 1];
-
-		check = new boolean[v + 1];
-		// dist 배열은 무한대 값으로 초기화
-		// 원래 값보다 작으면 원소를 갱신하는 쪽으로 구현할 것이므로
-		INF = Integer.MAX_VALUE;
-		Arrays.fill(dist, INF);
 
 		dist[node] = 0;
 
